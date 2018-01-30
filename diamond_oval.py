@@ -1,5 +1,7 @@
 """Evaluates oval diamonds. User enters the Table %, Depth %, length, and width numbers
 and gets diamond quality based on https://www.diamonds.pro/education/oval-cut/
+Creator: Kenny Hoang
+MIT License
 """
 
 import math
