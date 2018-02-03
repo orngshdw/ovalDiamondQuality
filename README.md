@@ -10,4 +10,4 @@ After going to the directory where the script lives, run
 and the script will ask you for the values. Enter them in and the script will end with its recommendation of the quality level (either Excellent, Very Good, Good, Fair, or Poor).
 
 ## Reference
-I found the numbers to go by for oval diamonds at [The Diamond Pro](https://www.diamonds.pro/education/oval-cut/). Feel free to checkout the website for some really good pointers.
+I found the numbers to go by for oval diamonds at [The Diamond Pro](https://www.diamonds.pro/education/oval-cut/). Feel free to checkout the website for some really good pointers!
