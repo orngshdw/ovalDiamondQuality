@@ -39,38 +39,44 @@ length_width_reference = {
          "Poor": [[0.00, 1.20], [1.65, 100.0]]
 }
 
-questions = ["What is the Table Percentage? ", "What is the Depth Percentage? ", "What is the length of diamond? ", "What is the width of diamond? "]
-str_diamond_prop = ["Table %", "Depth % ", "Length/Width ratio"]
-diamond_prop = [table_reference, depth_reference, length_width_reference]
-buy_prop = [0.0, 0.0, 0.0, 0.0]
 
-value_assigned, q = False, 0
+def main():
+    questions = ["What is the Table Percentage? ", "What is the Depth Percentage? ", "What is the length of diamond? ", "What is the width of diamond? "]
+    str_diamond_prop = ["Table %", "Depth % ", "Length/Width ratio"]
+    diamond_prop = [table_reference, depth_reference, length_width_reference]
+    buy_prop = [0.0, 0.0, 0.0, 0.0]
 
-while value_assigned is False:
-    while q < 4:
-        try:
-            buy_prop[q] = float(input(questions[q]))
-            assert math.sqrt(buy_prop[q]) < 10.0
-            q += 1
-        except(AssertionError, ValueError):
-            print("Please enter a number between 0 and 100")
+    value_assigned, q = False, 0
 
-    buy_prop[2] = buy_prop[2]/buy_prop[3]
-    value_assigned = True
+    while value_assigned is False:
+        while q < 4:
+            try:
+                buy_prop[q] = float(input(questions[q]))
+                assert math.sqrt(buy_prop[q]) < 10.0
+                q += 1
+            except(AssertionError, ValueError):
+                print("Please enter a number between 0 and 100")
 
-print("\nScale: Excellent, Very Good, Good, Fair, Poor")
+        buy_prop[2] = buy_prop[2]/buy_prop[3]
+        value_assigned = True
 
-for p in range(3):
-    match = False
-    for quality, ranges in diamond_prop[p].items():
-        for value in ranges:
-            if buy_prop[p] >= value[0] and buy_prop[p] <= (value[0]+value[1]):
-                print("{} is {}, {}".format(str_diamond_prop[p], quality, buy_prop[p]))
-                match = True
+    print("\nScale: Excellent, Very Good, Good, Fair, Poor")
 
-        if match is True:
-            break
+    for p in range(3):
+        match = False
+        for quality, ranges in diamond_prop[p].items():
+            for value in ranges:
+                if buy_prop[p] >= value[0] and buy_prop[p] <= (value[0]+value[1]):
+                    print("{} is {}, {}".format(str_diamond_prop[p], quality, buy_prop[p]))
+                    match = True
 
-# Formatting purposes at the end of output
-print("")
+            if match is True:
+                break
+    
+    # Formatting purposes at the end of output
+    print("")
+
+
+if __name__ == '__main__':
+    main()
 
