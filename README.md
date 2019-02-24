@@ -19,7 +19,7 @@ go run diamond_oval.go
 Then enter values following the prompts. The script will end with its quality level for each criteria (will be either Excellent, Very Good, Good, Fair, or Poor).
 
 ## Additional Information
-Oval diamonds may have a cross-sectional center with dead light (a bow-tie), which can only be determined visually. Be sure to view the diamond from different angles!
+Due to its shape, oval diamonds may have dead light (a bow-tie) in its center area, which can look unpleasant. The severity of the bow-tie is best determined visually. Be sure to view the diamond from different angles!
 
 ![bowtie](https://www.diamonds.pro/wp-content/uploads/2017/03/Oval-Cut-Diamond-Bowtie-effect.jpg)
 
