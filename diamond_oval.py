@@ -37,9 +37,9 @@ def main(answer=[]):
     if not answer:
         for q in questions:
             while True:
-                value = float(input(q))
                 try:
-                    assert math.sqrt(value) < 10.0
+                    value = float(input(q))
+                    assert value or math.sqrt(value) < 10.0
                     answer.append(value)
                     break
                 except (AssertionError, ValueError):

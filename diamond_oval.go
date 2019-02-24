@@ -15,20 +15,13 @@ package main
 
 import (
 	"bufio"
-	"errors"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
-func Sqrt(f float64) (float64, error) {
-	if f < 0 || f > 100 {
-		return 0, errors.New("Not a number between 0 and 100")
-	}
-	return math.Sqrt(f), nil
-}
+const inputErrMsg = "Please enter a number between 0 and 100"
 
 func OvalQuality() {
 	quality := []string{"Poor", "Fair", "Good", "Very Good", "Excellent"}
@@ -47,18 +40,13 @@ func OvalQuality() {
 	var answer [4]float64
 	var err error
 	for i, q := range questions {
-		fmt.Print(q)
 		for {
+                        fmt.Print(q)
 			input, _ = reader.ReadString('\n')
 			input = strings.TrimSuffix(input, "\n")
 			answer[i], err = strconv.ParseFloat(input, 64)
-			if err != nil {
-				fmt.Println("Please enter a valid number")
-				continue
-			}
-			_, err = Sqrt(answer[i])
-			if err != nil {
-				fmt.Println("Please enter a number between 0 and 100")
+			if err != nil || answer[i] <= 0 || answer[i] >= 100 {
+				fmt.Println(inputErrMsg)
 				continue
 			}
 			break
@@ -68,15 +56,13 @@ func OvalQuality() {
 
 	fmt.Println("\nScale: Excellent, Very Good, Good, Fair, Poor")
 
-	var i int
 	var scale []float64
-	for _, criteria := range referenceKeys{
+	for i, criteria := range referenceKeys{
 	// for criteria, scale := range reference {
 		for index, value := range reference[criteria] {
 			scale = reference[criteria]
 			if answer[i] <= value || answer[i] >= scale[8-index-1] {
 				fmt.Printf("%s is %s, %g\n", criteria, quality[index], answer[i])
-				i = i + 1
 				break
 			}
 		}
