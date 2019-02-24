@@ -19,8 +19,8 @@ go run diamond_oval.go
 Then enter values following the prompts. The script will end with its quality level for each criteria (will be either Excellent, Very Good, Good, Fair, or Poor).
 
 ## Additional Information
-[The Diamond Pro](https://www.diamonds.pro/education/oval-cut/) for the criteria reference. Feel free to checkout the website for some really good pointers!
-
 Oval diamonds may have a cross-sectional center with dead light (a bow-tie), which can only be determined visually. Be sure to view the diamond from different angles!
 
 ![bowtie](https://www.diamonds.pro/wp-content/uploads/2017/03/Oval-Cut-Diamond-Bowtie-effect.jpg)
+
+[The Diamond Pro](https://www.diamonds.pro/education/oval-cut/) for the criteria reference. The site has some really good pointers.
